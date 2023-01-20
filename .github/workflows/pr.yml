@@ -102,7 +102,7 @@ jobs:
         shell: bash
 
       - name: Download Compiled Frontend (rice-box.go)
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: static-rice-box
           path: ./source
@@ -145,7 +145,7 @@ jobs:
         shell: bash
 
       - name: Download Compiled Frontend (rice-box.go)
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: static-rice-box
           path: ./source
