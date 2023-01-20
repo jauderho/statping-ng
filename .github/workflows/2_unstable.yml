@@ -49,7 +49,7 @@ jobs:
         run: make clean generate compile
 
       - name: Upload Compiled Frontend (rice-box.go)
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: static-rice-box
           path: ./source
@@ -154,7 +154,7 @@ jobs:
           echo "compressed=statping-darwin-${{ matrix.arch }}.tar.gz" >> $GITHUB_ENV
           
       - name: Upload Compiled Statping Binary
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: statping-${{ matrix.platform }}-${{ matrix.arch }}
           path: ./build
