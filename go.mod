@@ -5,7 +5,7 @@ go 1.17
 
 require (
 	github.com/GeertJohan/go.rice v1.0.2
-	github.com/aws/aws-sdk-go v1.30.20
+	github.com/aws/aws-sdk-go v1.44.199
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fatih/structs v1.1.0
 	github.com/foomo/simplecert v1.7.5
@@ -74,7 +74,7 @@ require (
 	github.com/iij/doapi v0.0.0-20190504054126-0bbf12d6d7df // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jmespath/go-jmespath v0.3.0 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
 	github.com/kolo/xmlrpc v0.0.0-20200310150728-e0350524596b // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
