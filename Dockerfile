@@ -10,13 +10,13 @@ RUN yarn build && yarn cache clean
 
 # Statping Golang BACKEND building from source
 # Creates "/go/bin/statping" and "/usr/local/bin/sass" for copying
-FROM golang:1.20-alpine AS backend
+FROM golang:1.20.0-alpine AS backend
 LABEL maintainer="Statping-NG (https://github.com/statping-ng)"
 ARG VERSION
 ARG COMMIT
 ARG BUILDPLATFORM
 ARG TARGETARCH
-RUN apk add --update --no-cache libstdc++ gcc g++ make git autoconf \
+RUN apk add --no-cache libstdc++ gcc g++ make git autoconf \
     libtool ca-certificates linux-headers wget curl jq && \
     update-ca-certificates
 
@@ -66,6 +66,6 @@ ENV BASE_PATH=""
 
 EXPOSE $PORT
 
-HEALTHCHECK --interval=60s --timeout=10s --retries=3 CMD if [ -z "$BASE_PATH" ]; then HEALTHPATH="/health"; else HEALTHPATH="/$BASE_PATH/health" ; fi && curl -s "http://localhost:80$HEALTHPATH" | jq -r -e ".online==true"
+HEALTHCHECK --interval=60s --timeout=10s --retries=3 CMD if [ -z "$BASE_PATH" ]; then HEALTHPATH="/health"; else HEALTHPATH="/$BASE_PATH/health" ; fi && curl -s "http://localhost:${PORT}$HEALTHPATH" | jq -r -e ".online==true"
 
 CMD statping --port $PORT
